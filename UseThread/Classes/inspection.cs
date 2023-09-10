@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UseThread.Classes
 {
-    internal class inspection
+    public class inspection
     {
 
     }

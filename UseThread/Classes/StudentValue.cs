@@ -1,32 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using UseThread.Entity;
 
-namespace UseThread.Classes
-{
-    internal static class StudentValue
-    {
-        public static List<Student> students = new List<Student>();
+namespace UseThread.Classes;
 
-        public static void Add(Student student)
+public class StudentValue
+{
+    public static List<Student> students { get; set; }
+    public static List<string> userNames { get; set; }
+
+    public StudentValue()
+    {
+        students = new List<Student>();
+        userNames = new List<string>();
+    }
+
+    public static void Add(Student student)
+    {
+            students.Add(student);   
+    }
+    public static bool See(Student student) 
+    {
+        return false;
+    }
+    public bool Name(string name)
+    {
+        Thread.Sleep(1500);
+        bool s;
+        for (int i = 0; i < userNames.Count; i++)
         {
-            bool Enpty = students.Any(s => s.UserName != student.UserName);
-            if (Enpty)
+            if (userNames[i] == name)
             {
-                students.Add(student);
-                Console.WriteLine("This username has been added before\nPlease try again with another username");
-            }
-            else
-            {
-                Console.WriteLine("User successfully Add");
+                return true;
             }
         }
-        public static bool See(Student student) 
-        {
-            return false;
-        }
+        
+        userNames.Add(name);
+          
+        return false;
     }
 }
