@@ -1,27 +1,16 @@
 ﻿
 
 using UseThread.Classes;
+using UseThread.Entity;
 
-var cr = new CreateStudent();
-string z; 
+var value = new EnterValue();
+var see = new inspection();
+var student = new Student(); 
 
 
-while (true)
-{
-    Console.WriteLine("1 : Create student\n2 : See student");
-    z = Console.ReadLine();
-    if (z == "1")
-    {
-        cr.Create();
-    }
-    else if (z == "2")
-    {
 
-    }
-    else
-    {
-        Console.WriteLine("Error");
-    }
-    
-}
+student = value.Create();
+
+see.See(student);
+
 
