@@ -11,6 +11,8 @@ var student = new Student();
 
 student = value.Create();
 
-see.See(student);
+await see.See(student);
+
+Console.ReadKey();
 
 
